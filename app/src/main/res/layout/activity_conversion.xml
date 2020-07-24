@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConversionActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar_conversion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="兑换"
+            android:textColor="#000"
+            android:textSize="30sp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="手机号"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar_conversion" />
+
+    <EditText
+        android:id="@+id/et_phone_sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="确认手机号"
+        app:layout_constraintTop_toBottomOf="@id/et_phone" />
+
+    <TextView
+        android:id="@+id/tv_banlce_conversion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="账户余额:"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_phone_sure" />
+
+    <TextView
+        android:id="@+id/tv_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="请选择兑换内容"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_banlce_conversion" />
+
+    <TextView
+        android:id="@+id/tv_pay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="手续费"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_banlce_conversion" />
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_pay"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_conversion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="充值话费一般在24小时内到账，到账后立即生效"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll" />
+
+    <Button
+        android:id="@+id/btn_canlse"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="#E91E63"
+        android:text="取消"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn_sure"
+        app:layout_constraintTop_toBottomOf="@id/tv_conversion" />
+
+    <Button
+        android:id="@+id/btn_sure"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="#FFEB3B"
+        android:text="确认兑换"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/btn_canlse"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_conversion" />
+</androidx.constraintlayout.widget.ConstraintLayout>
